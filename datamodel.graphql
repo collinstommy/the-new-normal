@@ -1,0 +1,43 @@
+
+# type Image {
+#   id: ID! @id
+#   url: Sring!
+#   caption: String
+#   createdAt: DateTime! @createdAt
+# }
+
+# type Message {
+#   id: ID! @id
+#   text: String
+#   createdAt: DateTime! @createdAt
+# }
+
+# type Report {
+#   id: ID! @id
+#   entityId: ID! @id 
+#   createdAt: DateTime! @createdAt
+# }
+
+
+# Messsages:
+# id: m1   text: 'somemessage'
+# id: m2   text: 'other message'
+
+# Image:
+# id: img1   url: 'someurl.com/image'
+# id: img2   text: 'someurl.com/image.com'
+# id: img3   text: 'someurl.com/image.com'
+
+# Report
+# id: e1234 entityId: m1
+# id: e1234 entityId: img3
+
+# const image = getImage()
+# if(prisma.reports({ 
+#   {
+#     where: {
+#       entityId: image.id
+#     }
+#   }) > 3 {
+#     hideImage();
+#   }
